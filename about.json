@@ -3,10 +3,10 @@
   "component": true,
   "about_url": "https://github.com/gal-samuel-israel/gsis-custom-tiles/blob/main/about.txt",
   "license_url": "https://github.com/gal-samuel-israel/gsis-custom-tiles/blob/main/LICENSE",
-  "assets": {
-    "img_announcements": "assets/img/announcements.png",
-    "img_ask_the_community": "assets/img/ask-the-community.png",
+  "assets": {    
     "img_get_started": "assets/img/get-started.png",
+    "img_ask_the_community": "assets/img/ask-the-community.png",
+    "img_announcements": "assets/img/announcements.png",
     "img_show_and_tell": "assets/img/show-and-tell.png",
     "img_arrow_green": "assets/img/arrow-green.png"
   },
