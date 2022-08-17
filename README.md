@@ -2,7 +2,7 @@ This is a component that puts a Custom Tiles Row above the main topic list navig
 
 By default this component shows on community's homepage. You can also set it to be presented on all top-level topic pages.
 
-This repo is Based on : [Github repo](https://github.com/discourse/discourse-search-banner): `https://github.com/discourse/discourse-search-banner`
+This component is Based on : [discourse-search-banner](https://github.com/discourse/discourse-search-banner): `https://github.com/discourse/discourse-search-banner`
 
 ### Available settings
 
