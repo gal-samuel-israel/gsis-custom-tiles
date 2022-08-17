@@ -63,6 +63,8 @@ export default Component.extend({
 
   },
 
+  themeSettings: settings,
+  
   didDestroyElement() {
     document.documentElement.classList.remove("display-custom-tiles-bk");
   },
