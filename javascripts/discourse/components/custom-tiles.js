@@ -58,6 +58,8 @@ export default Component.extend({
     const titleImg3 = settings.tile_3_image;
     const titleImg4 = settings.tile_4_image;
     
+    console.log(jQuery);
+
     this.$('#tile-img-1').attr('src',titleImg1);
 
     this.displayChanged();
