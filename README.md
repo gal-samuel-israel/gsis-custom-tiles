@@ -1,27 +1,19 @@
-This is a component that puts a search bar along with optional headline and subhead text in a banner above the main topic list navigation of a Discourse community.
+This is a component that puts a Custom Tiles Row above the main topic list navigation of a Discourse community.
 
-By default this banner appears on all top-level topic pages (latest/new/unread/top/categories... anything in the `top menu` site setting) but it can also be set to only display on a community's homepage.
+By default this component shows on community's homepage. You can also set it to be presented on all top-level topic pages.
 
-![17%20PM|690x326](https://d11a6trkgmumsb.cloudfront.net/optimized/3X/1/4/14ec7e5d17d7b8bd203759ce1c9b69605e2d9e03_2_1380x652.png)
-
-:building_construction: [Github repo](https://github.com/discourse/discourse-search-banner): `https://github.com/discourse/discourse-search-banner`
-
-:telescope: [Preview it on theme creator](https://theme-creator.discourse.org/theme/awesomerobot/discourse-search-banner)
-
-:question: [How do I install a theme component?](https://meta.discourse.org/t/how-do-i-install-a-theme-or-theme-component/63682)
-
-:sparkling_heart: This very heavily borrows from [angus'](https://github.com/angusmcleod) header search component: https://meta.discourse.org/t/header-search-theme/67959
+[Github repo](https://github.com/gal-samuel-israel/gsis-custom-tiles): `https://github.com/gal-samuel-israel/gsis-custom-tiles' is
+Based on : [Github repo](https://github.com/discourse/discourse-search-banner): `https://github.com/discourse/discourse-search-banner`
 
 ### Available settings
 
-- Set the headline and subhead text
-- Show the banner on all top-level topic pages (default), or just the homepage
-- Set a background image
+- Set the headline and subhead text, link and alt for the link
+- Show the banner on all top-level topic pages , or just the homepage (default)
 
 ### Custom styling
 
-The HTML element gets a class named `.display-search-banner` wherever this banner appears, and the banner itself is wrapped with the `.custom-search-banner` class, so with some CSS you should be able to customize the appearance of this banner however you see fit.
+The HTML element gets a class named `.display-custom-tiles` wherever this component appears, and the Custom tiles div  `.custom-tiles-wrap` class, so with some CSS you should be able to customize the appearance of this component
 
 ### Future enhancements
 
-- Add an option to enable the banner in specific categories
+- Set images for the tiles from the component control panel
