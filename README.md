@@ -1,4 +1,4 @@
-This is a component that puts a Custom Tiles Row above the main topic list navigation of a Discourse community.
+This is a component that puts 4 Custom Tiles in a Row above the main topic list navigation of a Discourse community.
 
 By default this component shows on community's homepage. You can also set it to be presented on all top-level topic pages.
 
