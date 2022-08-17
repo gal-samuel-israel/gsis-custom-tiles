@@ -1,20 +1,21 @@
 en:
-  search_banner:
-    headline: "Welcome to our community"
-    subhead: "We're happy to have you here. If you need help, please search before you post."
   tile_1:
-    headline: "Getting Started"
+    headline: "Get Started"
     subhead: "Hi there and welcome to our community"
-    link_alt: "click to explore Getting Started"
+    link: "/c/get-started"
+    link_alt: "click to explore Get Started"
   tile_2:
     headline: "Ask the Community"
     subhead: "A place to ask questions about"
+    link: "/c/ask-the-community"
     link_alt: "click to explore the community"
   tile_3:
     headline: "Announcements"
     subhead: "his is where we announce news"
+    link: "/c/8-category"
     link_alt: "click to explore Announcements"
   tile_4:
     headline: "Show and Tell"
     subhead: "A place to showoff and describe your most awesome"
+    link: "/c/show-and-tell"
     link_alt: "click to explore Show and Tell"
