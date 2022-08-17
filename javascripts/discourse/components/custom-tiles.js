@@ -54,6 +54,8 @@ export default Component.extend({
   didInsertElement() {      
     this._super(...arguments);
     
+    console.log(settings);
+    
     jQuery('#tile-img-1 img').attr('src',(settings.tile_1_image!=='')?settings.tile_1_image:settings.theme_uploads.img_get_started);
     jQuery('#tile-img-2 img').attr('src',(settings.tile_2_image!=='')?settings.tile_2_image:settings.theme_uploads.img_ask_the_community);
     jQuery('#tile-img-3 img').attr('src',(settings.tile_3_image!=='')?settings.tile_3_image:settings.theme_uploads.img_announcements);
