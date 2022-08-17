@@ -51,15 +51,16 @@ export default Component.extend({
     );
   },
 
-  didInsertElement() {
-    this.displayChanged();    
-
+  didInsertElement() {      
+    this._super(...arguments);
     const titleImg1 = settings.tile_1_image;
     const titleImg2 = settings.tile_2_image;
     const titleImg3 = settings.tile_3_image;
     const titleImg4 = settings.tile_4_image;
-    const img1 = this.$('#tile-img-1');
-    img1.attr('src',titleImg1);
+    
+    this.$('#tile-img-1').attr('src',titleImg1);
+
+    this.displayChanged();
 
   },
 
