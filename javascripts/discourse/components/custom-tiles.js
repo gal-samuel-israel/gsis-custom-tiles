@@ -60,7 +60,7 @@ export default Component.extend({
     
     console.log(jQuery);
 
-    this.$('#tile-img-1').attr('src',titleImg1);
+    jQuery('#tile-img-1').attr('src',titleImg1);
 
     this.displayChanged();
 
