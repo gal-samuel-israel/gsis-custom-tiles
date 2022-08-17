@@ -1,10 +1,12 @@
 {{#if shouldDisplay}}
   <div class="custom-tiles-wrap">
     <div class="wrap tile-wrap">
+        <a href={{tile_1.link}} alt={{theme-i18n "tile_1.link_alt"}}>
         <div id="tile-img-1" class="tile-img"><img /></div>
         <div class="tile-headline">{{theme-i18n "tile_1.headline"}}</div>
         <div class="tile-subhead">{{theme-i18n "tile_1.subhead"}}</div>      
-        <div class="tile-link"><a href={{"tile_1.link"}} alt={{theme-i18n "tile_1.link_alt"}}></a></div> 
+        <div class="tile-link"><img :src="require(`@/assets/img/$img_arrow_green`)"/></div>
+        </a>
     </div>
     <div class="wrap tile-wrap">
         <div id="tile-img-2" class="tile-img"><img /></div>
