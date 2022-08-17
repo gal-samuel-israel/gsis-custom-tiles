@@ -53,14 +53,11 @@ export default Component.extend({
 
   didInsertElement() {      
     this._super(...arguments);
-    const titleImg1 = settings.tile_1_image;
-    const titleImg2 = settings.tile_2_image;
-    const titleImg3 = settings.tile_3_image;
-    const titleImg4 = settings.tile_4_image;
     
-    console.log(jQuery);
-
-    jQuery('#tile-img-1').attr('src',titleImg1);
+    jQuery('#tile-img-1 img').attr('src',settings.tile_1_image);
+    jQuery('#tile-img-2 img').attr('src',settings.tile_2_image);
+    jQuery('#tile-img-3 img').attr('src',settings.tile_3_image);
+    jQuery('#tile-img-4 img').attr('src',settings.tile_4_image);
 
     this.displayChanged();
 
