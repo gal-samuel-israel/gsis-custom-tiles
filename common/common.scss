@@ -170,7 +170,7 @@ $max-width: 600px;
   }
   .wrap.tile-wrap .tile-img{
     display:block;
-    min-height:
+    max-height:200px;
   }
   #tile-img-1{
     @if $tile-1-image != "none" {
