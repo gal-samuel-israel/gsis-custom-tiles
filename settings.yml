@@ -1,11 +1,10 @@
 show_on:
-  default: top_menu
+  default: homepage
   type: enum
   choices:
-    - top_menu
     - homepage
     - all
-  description: top_menu refers to the <a href="/admin/site_settings/category/all_results?filter=top_menu">top menu site setting</a>
+  description: custom tiles
 
 plugin_outlet:
   default: "above-main-container"
@@ -17,7 +16,7 @@ plugin_outlet:
 background_image:
   type: upload
   default: ""
-  description: background image for the banner
+  description: background image for the container of the tiles
 
 tile_background_image: false
 

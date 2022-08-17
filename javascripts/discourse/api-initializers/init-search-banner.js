@@ -8,16 +8,23 @@ export default apiInitializer("0.8", (api) => {
       ? "below-site-header"
       : "above-main-container";
 
+  /*
   api.registerConnectorClass(disableConnectorName, "search-banner", {
+    shouldRender() {
+      return false;
+    },
+  });
+  */
+  api.registerConnectorClass(disableConnectorName, "custom-tiles", {
     shouldRender() {
       return false;
     },
   });
 
   // Simplified version of header search theme component
-  const searchMenuWidget = api.container.factoryFor("widget:search-menu");
-  const corePanelContents = searchMenuWidget.class.prototype["panelContents"];
-
+  const customTilesWidget = api.container.factoryFor("widget:search-menu");
+  const corePanelContents = customTilesWidget.class.prototype["panelContents"];
+  /*
   api.reopenWidget("search-menu", {
     buildKey(attrs) {
       let type = attrs.formFactor || "menu";
@@ -116,11 +123,17 @@ export default apiInitializer("0.8", (api) => {
       }
     },
   });
-
+  */
+ /*
   api.createWidget("search-widget", {
     tagName: "div.search-widget",
   });
+  */
+  api.createWidget("custom-tiles-widget", {
+    tagName: "div.custom-tiles-widget",
+  });
 
+  /*
   api.decorateWidget("search-widget:after", function (helper) {
     const searchWidget = helper.widget;
     const searchMenuVisible = searchWidget.state.searchVisible;
@@ -132,4 +145,6 @@ export default apiInitializer("0.8", (api) => {
       });
     }
   });
+  */
+
 });

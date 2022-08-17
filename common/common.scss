@@ -1,8 +1,14 @@
 @import "common/foundation/mixins";
 
 $max-width: 600px;
-
+/*
 .display-search-banner {
+  #main-outlet {
+    padding-top: 0;
+  }
+}
+*/
+.display-custom-tiles-bk {
   #main-outlet {
     padding-top: 0;
   }

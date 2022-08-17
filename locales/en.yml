@@ -2,3 +2,19 @@ en:
   search_banner:
     headline: "Welcome to our community"
     subhead: "We're happy to have you here. If you need help, please search before you post."
+  tile_1:
+    headline: "Getting Started"
+    subhead: "Hi there and welcome to our community"
+    link_alt: "click to explore Getting Started"
+  tile_2:
+    headline: "Ask the Community"
+    subhead: "A place to ask questions about"
+    link_alt: "click to explore the community"
+  tile_3:
+    headline: "Announcements"
+    subhead: "his is where we announce news"
+    link_alt: "click to explore Announcements"
+  tile_4:
+    headline: "Show and Tell"
+    subhead: "A place to showoff and describe your most awesome"
+    link_alt: "click to explore Show and Tell"
