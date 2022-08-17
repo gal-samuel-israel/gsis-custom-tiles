@@ -55,7 +55,7 @@ export default Component.extend({
     this._super(...arguments);
         
     const assets = settings.theme_uploads;
-    console.log(assets);
+    //console.log(assets);
 
     //Uploads or Assets
     const img1 = (settings.tile_1_image!=='' && settings.tile_1_image!==null)?settings.tile_1_image:assets.img_get_started;
