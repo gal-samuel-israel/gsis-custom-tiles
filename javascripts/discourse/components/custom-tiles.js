@@ -58,8 +58,8 @@ export default Component.extend({
     const titleImg2 = settings.tile_2_image;
     const titleImg3 = settings.tile_3_image;
     const titleImg4 = settings.tile_4_image;
-    console.log(document.getElementsByName("tile-img-1").item);
-    document.getElementsByName("tile-img-1").item[0].src = titleImg1;
+    console.log(this);
+    
   },
 
   didDestroyElement() {
