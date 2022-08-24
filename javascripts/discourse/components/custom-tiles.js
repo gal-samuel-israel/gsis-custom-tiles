@@ -13,10 +13,6 @@ export default Component.extend({
     const showOn = settings.show_on;
     if (showOn === "homepage") {
       return currentRouteName === `discovery.${defaultHomepage()}`;
-    } else if (showOn === "top_menu") {
-      return this.siteSettings.top_menu
-        .split("|")
-        .any((m) => `discovery.${m}` === currentRouteName);
     } else {
       // "all"
       return (

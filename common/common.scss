@@ -2,6 +2,10 @@
 
 $max-width: 600px;
 
+/* hide Tiles when component not on page */
+.custom-tiles {display:none;}
+.display-custom-tiles-bk .custom-tiles{display:block;}
+
 /* Cusotm Tiles - Below Header */
 .below-site-header-outlet.custom-tiles{
   background-color:#D3F0FF;
