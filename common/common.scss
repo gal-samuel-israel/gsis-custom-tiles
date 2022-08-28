@@ -2,16 +2,19 @@
 
 $max-width: 600px;
 
-/* hide Tiles when component not on page */
-.custom-tiles {display:none;}
-.display-custom-tiles-bk .custom-tiles{display:block;}
-
-/* Cusotm Tiles - Below Header */
 .below-site-header-outlet.custom-tiles{
+  display:block;
+  background-color:unset;
+  padding:0;
+  margin: 0 0 2em 0;
+}
+
+.display-custom-tiles-bk .below-site-header-outlet.custom-tiles{
   background-color:#D3F0FF;
   padding:2em 0;
   margin: 0 0 2em 0;
 }
+
 .below-site-header-outlet.custom-tiles > .custom-tiles-wrap {
   max-width:var(--d-max-width);
   margin:1em auto;
