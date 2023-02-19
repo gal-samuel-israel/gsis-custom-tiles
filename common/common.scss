@@ -10,15 +10,15 @@ $max-width: 600px;
 }
 
 .display-custom-tiles-bk .below-site-header-outlet.custom-tiles{
-  background-color:#D3F0FF;
-  padding:2em 0;
+  background-color:#f5f7f9;
+  padding:0;
   margin: 0 0 2em 0;
 }
 
 .below-site-header-outlet.custom-tiles > .custom-tiles-wrap {
   max-width:var(--d-max-width);
-  margin:1em auto;
-  padding:0 2em;   
+  margin:0 auto;
+  padding:0 2em 2em 2em;
 }
 
 .wrap.tile-wrap {
