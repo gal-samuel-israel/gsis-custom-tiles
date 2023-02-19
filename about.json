@@ -8,7 +8,9 @@
     "img_ask_the_community": "assets/img/ask-the-community.png",
     "img_announcements": "assets/img/announcements.png",
     "img_show_and_tell": "assets/img/show-and-tell.png",
-    "img_arrow_green": "assets/img/arrow-green.png"
+    "img_arrow_green": "assets/img/arrow-green.png",
+    "img_arrow_white": "assets/img/arrow-white.png",
+    "img_arrow_black": "assets/img/arrow-black.png"
   },
   "color_schemes": {}
 }
