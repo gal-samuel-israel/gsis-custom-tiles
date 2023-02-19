@@ -78,6 +78,6 @@ $max-width: 600px;
   .tile-img{display:block;}
   .tile-headline {font-size: 1em; font-weight: 800; color:var(--primary);}
   .tile-subhead {color:var(--primary);}
-  .tile-img img { display: block; width: -webkit-fill-available; margin-bottom: 0.7em;}
+  .tile-img img.tile-img-thumb { display: block; width: -webkit-fill-available; margin-bottom: 0.7em;}
   .tile-link a{display:block;}
 }
