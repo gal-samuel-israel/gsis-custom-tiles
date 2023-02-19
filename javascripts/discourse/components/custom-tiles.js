@@ -59,10 +59,10 @@ export default Component.extend({
     const img3 = (settings.tile_3_image!=='' && settings.tile_3_image!==null)?settings.tile_3_image:assets.img_announcements;
     const img4 = (settings.tile_4_image!=='' && settings.tile_4_image!==null)?settings.tile_4_image:assets.img_show_and_tell;
 
-    jQuery('#tile-img-1 img').attr('src',img1);
-    jQuery('#tile-img-2 img').attr('src',img2);
-    jQuery('#tile-img-3 img').attr('src',img3);
-    jQuery('#tile-img-4 img').attr('src',img4);
+    jQuery('#tile-img-1 > img').attr('src',img1);
+    jQuery('#tile-img-2 > img').attr('src',img2);
+    jQuery('#tile-img-3 > img').attr('src',img3);
+    jQuery('#tile-img-4 > img').attr('src',img4);
 
     this.displayChanged();
 
