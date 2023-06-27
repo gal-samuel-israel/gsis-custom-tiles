@@ -2,7 +2,8 @@ import Component from "@ember/component";
 import { inject as service } from "@ember/service";
 import { defaultHomepage } from "discourse/lib/utilities";
 import { and } from "@ember/object/computed";
-import discourseComputed, { observes } from "discourse-common/utils/decorators";
+import { observes } from "@ember-decorators/object";
+import discourseComputed from "discourse-common/utils/decorators";
 
 export default Component.extend({
   router: service(),
@@ -47,9 +48,9 @@ export default Component.extend({
     );
   },
 
-  didInsertElement() {      
+  didInsertElement() {
     this._super(...arguments);
-        
+
     const assets = settings.theme_uploads;
     //console.log(assets);
 
@@ -69,7 +70,7 @@ export default Component.extend({
   },
   didRender(){
     this._super(...arguments);
-        
+
     const assets = settings.theme_uploads;
     //console.log(assets);
 

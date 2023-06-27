@@ -13,7 +13,6 @@ export default apiInitializer("0.8", (api) => {
     },
   });
 
-  
   api.createWidget("custom-tiles-widget", {
     tagName: "div.custom-tiles-widget",
   });
