@@ -1,5 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
-import customTilesComponent from "../components/custom-tiles";
+//import customTilesComponent from "../components/custom-tiles";
 
 export default apiInitializer("0.8", (api) => {
   const settingsOutlet = settings.plugin_outlet;
