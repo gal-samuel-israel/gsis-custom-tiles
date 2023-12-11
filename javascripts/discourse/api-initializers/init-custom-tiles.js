@@ -8,8 +8,8 @@ export default apiInitializer("0.8", (api) => {
       ? "below-site-header"
       : "above-main-container";
 
-
-/* DEPRECATEDbut works 
+/* Solution was to remove the connector from below-site-header so that the component will not show 2 times */
+/* DEPRECATED but works 
   api.registerConnectorClass(selectedOutlet, "custom-tiles", {
     shouldRender() {
       return false;
