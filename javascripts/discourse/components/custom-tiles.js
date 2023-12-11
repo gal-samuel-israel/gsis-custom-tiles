@@ -9,6 +9,10 @@ export default Component.extend({
   router: service(),
   tagName: "",
 
+  shouldRender() {
+    return false;
+  },
+
   @discourseComputed("router.currentRouteName")
   displayForRoute(currentRouteName) {
     const showOn = settings.show_on;
