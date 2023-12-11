@@ -16,7 +16,7 @@ export default apiInitializer("0.8", (api) => {
     },
   });
 */
-  /* not deprecated but does not work */
+  /* not deprecated but does not work 
   api.renderInOutlet(selectedOutlet, customTilesComponent);
 
   /*
