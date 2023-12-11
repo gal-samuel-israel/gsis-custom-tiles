@@ -9,19 +9,20 @@ export default apiInitializer("0.8", (api) => {
       : "above-main-container";
 
 
-/* DEPRECATED
+/* DEPRECATEDbut works */
   api.registerConnectorClass(finalOutlet, "custom-tiles", {
     shouldRender() {
       return false;
     },
   });
-*/
-  /* try solve the klass is not an Ember component */
+
+  /* not deprecated but does not work 
   api.renderInOutlet(finalOutlet, customTilesComponent, {
     shouldRender() {
       return false;
     },
   });
+*/
 
   api.createWidget("custom-tiles-widget", {
     tagName: "div.custom-tiles-widget",
