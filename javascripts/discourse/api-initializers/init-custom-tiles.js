@@ -19,8 +19,9 @@ export default apiInitializer("0.8", (api) => {
   /* not deprecated but does not work */
   api.renderInOutlet(selectedOutlet, customTilesComponent);
 
+  /*
   api.createWidget("custom-tiles-widget", {
     tagName: "div.custom-tiles-widget",
   });
-
+  */
 });
