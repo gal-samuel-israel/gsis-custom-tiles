@@ -7,13 +7,19 @@ export default apiInitializer("0.8", (api) => {
       ? "below-site-header"
       : "above-main-container";
 
-
+/*
   api.registerConnectorClass(finalOutlet, "custom-tiles", {
     shouldRender() {
       return false;
     },
   });
+*/
 
+  api.renderInOutlet(finalOutlet, "custom-tiles", {
+    shouldRender() {
+      return false;
+    },
+  });
 
   api.createWidget("custom-tiles-widget", {
     tagName: "div.custom-tiles-widget",
