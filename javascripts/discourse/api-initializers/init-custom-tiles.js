@@ -9,20 +9,15 @@ export default apiInitializer("0.8", (api) => {
       : "above-main-container";
 
 
-/* DEPRECATEDbut works */
+/* DEPRECATEDbut works 
   api.registerConnectorClass(finalOutlet, "custom-tiles", {
     shouldRender() {
       return false;
     },
   });
-
-  /* not deprecated but does not work 
-  api.renderInOutlet(finalOutlet, customTilesComponent, {
-    shouldRender() {
-      return false;
-    },
-  });
 */
+  /* not deprecated but does not work */
+  api.renderInOutlet(finalOutlet, customTilesComponent);
 
   api.createWidget("custom-tiles-widget", {
     tagName: "div.custom-tiles-widget",
