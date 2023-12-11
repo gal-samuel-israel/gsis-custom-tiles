@@ -1,4 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
+import customTilesComponent from "../components/custom-tiles";
 
 export default apiInitializer("0.8", (api) => {
   const settingsOutlet = settings.plugin_outlet;
@@ -8,19 +9,20 @@ export default apiInitializer("0.8", (api) => {
       : "above-main-container";
 
 
+/* DEPRECATED
   api.registerConnectorClass(finalOutlet, "custom-tiles", {
     shouldRender() {
       return false;
     },
   });
-
-/* klass is not an Ember component
-  api.renderInOutlet(finalOutlet, "custom-tiles", {
+*/
+  /* try solve the klass is not an Ember component */
+  api.renderInOutlet(finalOutlet, customTilesComponent, {
     shouldRender() {
       return false;
     },
   });
-*/
+
   api.createWidget("custom-tiles-widget", {
     tagName: "div.custom-tiles-widget",
   });
