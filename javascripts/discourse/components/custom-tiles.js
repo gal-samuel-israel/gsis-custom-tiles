@@ -6,6 +6,10 @@ import { observes } from "@ember-decorators/object";
 import discourseComputed from "discourse-common/utils/decorators";
 
 export default Component.extend({
+  shouldRender(outletArgs, helper){
+    console.log(outLetArgs, helper);
+    return false;
+  },
   router: service(),
   tagName: "",
 
