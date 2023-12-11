@@ -27,7 +27,13 @@ export default apiInitializer("0.8", (api) => {
       ? "below-site-header"
       : "above-main-container";
 
-  api.renderInOutlet(disableConnectorName, "custom-tiles-widget");
+  api.decorateWidget("above-site-header", (helper) => {
+    return helper.attach("custom-tiles-widget");
+  });
+
+  api.decorateWidget("above-main-container", (helper) => {
+    return helper.attach("custom-tiles-widget");
+  });
 
   api.createWidget("custom-tiles-widget", {
     tagName: "div.custom-tiles-widget",
