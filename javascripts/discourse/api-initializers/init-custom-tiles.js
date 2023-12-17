@@ -11,6 +11,7 @@ api.registerConnectorClass was DEPRECTAED
 the  custom.tiles.hbs file moved into the components directory with its custom.tiles.js related file.
 api.createWidget directive was also disabled - seems that it is not required any more
 the outlet selection was updated into a simple 1 of 2 options
+old folders for template positioning etc' were removed
 */
 /* 
   api.registerConnectorClass(selectedOutlet, "custom-tiles", {
