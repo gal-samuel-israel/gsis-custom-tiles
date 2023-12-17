@@ -1,4 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
+import customTilesComponent from "../components/custom-tiles";
 
 export default apiInitializer("0.8", (api) => {
   const settingsOutlet = settings.plugin_outlet;
@@ -13,7 +14,7 @@ export default apiInitializer("0.8", (api) => {
   });
 */
   /* not deprecated but does not work */
-  api.renderInOutlet(selectedOutlet, 'custom-tiles');
+  api.renderInOutlet(selectedOutlet, customTilesComponent);
   /*
   api.createWidget("custom-tiles-widget", {
     tagName: "div.custom-tiles-widget",
