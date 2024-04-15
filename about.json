@@ -10,7 +10,8 @@
     "img_show_and_tell": "assets/img/show-and-tell.png",
     "img_arrow_green": "assets/img/arrow-green.png",
     "img_arrow_white": "assets/img/arrow-white.png",
-    "img_arrow_black": "assets/img/arrow-black.png"
+    "img_arrow_black": "assets/img/arrow-black.png",
+    "img_banner": "assets/img/spacer.gif"
   },
   "color_schemes": {}
 }

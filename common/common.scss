@@ -86,3 +86,11 @@ $max-width: 600px;
   filter: invert(63%) sepia(25%) saturate(1485%) hue-rotate(254deg) brightness(100%) contrast(100%);
 }
 */
+
+/*banner*/
+.custom-tiles-wrap .wrap.tile-wrap.banner-wrap {
+  flex-basis: 100%;
+  max-width: 100%;
+  box-shadow: none;
+}
+.custom-tiles-wrap img#custom-tiles-banner{}

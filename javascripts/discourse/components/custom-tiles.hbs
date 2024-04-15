@@ -1,5 +1,10 @@
-{{#if shouldDisplay}}
+{{#if shouldDisplay}}  
   <div class="custom-tiles-wrap">
+    {{#if enableBanner}}
+      <div class="wrap tile-wrap">
+        <a href={{theme-i18n 'banner_target.link'}} alt={{theme-i18n "banner_target.link_alt"}} title={{theme-i18n "banner_target.link_alt"}}><img id="custom-tiles-banner" /></a>
+      </div>
+    {{/if}}
     <div class="wrap tile-wrap">
       <a href={{theme-i18n 'tile_1.link'}} alt={{theme-i18n "tile_1.link_alt"}} title={{theme-i18n "tile_1.link_alt"}}>
         {{#if enableTilesImages}}
