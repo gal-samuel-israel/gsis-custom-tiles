@@ -85,8 +85,7 @@ export default Component.extend({
   },
   didRender(){
     this._super(...arguments);
-    /* redundant ?
-    const assets = settings.theme_uploads;
+   const assets = settings.theme_uploads;
     //console.log(assets);
 
     //Uploads or Assets
@@ -99,7 +98,7 @@ export default Component.extend({
     jQuery('#tile-img-2 img.tile-img-thumb').attr('src',img2);
     jQuery('#tile-img-3 img.tile-img-thumb').attr('src',img3);
     jQuery('#tile-img-4 img.tile-img-thumb').attr('src',img4);
-    */
+    
   },
   didDestroyElement() {
     document.documentElement.classList.remove("display-custom-tiles-bk");
