@@ -39,9 +39,7 @@ export default Component.extend({
 
   shouldDisplay: and("displayForUser", "displayForRoute"),
 
-  enableTilesImages: discourseComputed("settings.enable_tile_images", function() {
-    return this.get("settings.enable_tile_images");
-  }),
+  enableTilesImages: true,
 
 
   // Setting a class on <html> from a component is not great
@@ -58,8 +56,16 @@ export default Component.extend({
     this._super(...arguments);
 
     const assets = settings.theme_uploads;
-    console.log('titles: ', settings.enable_tile_images);
     //console.log(assets);
+    
+    console.log('titles: ', settings.enable_tile_images);
+    if(settings.enable_tile_images){
+      this.enableTilesImages = true;
+    } else {
+      this.enableTilesImages = false;
+    }
+
+    
 
     //Uploads or Assets
     const img1 = (settings.tile_1_image!=='' && settings.tile_1_image!==null)?settings.tile_1_image:assets.img_get_started;
