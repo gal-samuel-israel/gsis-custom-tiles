@@ -60,9 +60,9 @@ export default Component.extend({
     
     console.log('titles: ', settings.enable_tile_images);
     if(settings.enable_tile_images){
-      this.enableTilesImages = true;
+      this.set("enableTilesImages", true);
     } else {
-      this.enableTilesImages = false;
+      this.set("enableTilesImages", false);
     }
 
     
