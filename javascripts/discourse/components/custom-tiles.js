@@ -64,9 +64,7 @@ export default Component.extend({
     } else {
       this.set("enableTilesImages", false);
     }
-
-    
-
+  
     //Uploads or Assets
     const img1 = (settings.tile_1_image!=='' && settings.tile_1_image!==null)?settings.tile_1_image:assets.img_get_started;
     const img2 = (settings.tile_2_image!=='' && settings.tile_2_image!==null)?settings.tile_2_image:assets.img_ask_the_community;
@@ -83,7 +81,7 @@ export default Component.extend({
   },
   didRender(){
     this._super(...arguments);
-
+    /* redundant ?
     const assets = settings.theme_uploads;
     //console.log(assets);
 
@@ -97,6 +95,7 @@ export default Component.extend({
     jQuery('#tile-img-2 img.tile-img-thumb').attr('src',img2);
     jQuery('#tile-img-3 img.tile-img-thumb').attr('src',img3);
     jQuery('#tile-img-4 img.tile-img-thumb').attr('src',img4);
+    */
   },
   didDestroyElement() {
     document.documentElement.classList.remove("display-custom-tiles-bk");
