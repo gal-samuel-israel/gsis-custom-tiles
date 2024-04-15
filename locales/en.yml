@@ -19,3 +19,6 @@ en:
     subhead: "A place to showoff and describe your most awesome"
     link: "/c/show-and-tell"
     link_alt: "click to explore Show and Tell"
+  banner_target:
+    link: "https://algosec.zoom.us/meeting/register/tJYqdOippz0pHNL1kkSssv7Sj4yOnOvr8I4r?mkt_tok=MTc4LVpGSC03MDUAAAGSbK-5wBuMGSZeqoJ5ENDvldvyhp6tI3CKqJyownq2dRQm85sDF0cndaiT5HvlV5JVex0JHOPxg5wIkKNkB5A#/registration"
+    link_alt: "Reserve your spot now"
