@@ -32,15 +32,15 @@ enable_banner_above_tiles:
   default: false
   description: "Enable to show a banner above tiles"
 
-enable_tile_images:
-  type: bool
-  default: false
-  description: "Enable to show the tiles images"
-
 banner_image:
   type: upload
   default: ""
   description: "Image for the banner above the tiles"
+
+enable_tile_images:
+  type: bool
+  default: false
+  description: "Enable to show the tiles images"
 
 tile_1_image:
   type: upload
