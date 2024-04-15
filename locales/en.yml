@@ -22,3 +22,4 @@ en:
   banner_target:
     link: "#"
     link_alt: ""
+    link_target:"_blank"
