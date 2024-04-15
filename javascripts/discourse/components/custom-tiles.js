@@ -39,7 +39,9 @@ export default Component.extend({
 
   shouldDisplay: and("displayForUser", "displayForRoute"),
 
-  enableTilesImages: (()=>{ return settings.enable_tile_images }),
+  enableTilesImages: discourseComputed("settings.enable_tile_images", function() {
+    return this.get("settings.enable_tile_images");
+  }),
 
 
   // Setting a class on <html> from a component is not great
