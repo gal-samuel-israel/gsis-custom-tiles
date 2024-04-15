@@ -58,6 +58,7 @@ export default Component.extend({
     this._super(...arguments);
 
     const assets = settings.theme_uploads;
+    console.log('titles: ', settings.enable_tile_images);
     //console.log(assets);
 
     //Uploads or Assets
