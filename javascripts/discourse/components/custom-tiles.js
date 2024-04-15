@@ -40,7 +40,7 @@ export default Component.extend({
   shouldDisplay: and("displayForUser", "displayForRoute"),
 
   enableTilesImages: ()=> {
-    console.log('eti');
+    console.log('eti debug:', debug);
     return settings.enable_tile_images;
   },
 
