@@ -22,6 +22,7 @@ $max-width: 600px;
 }
 
 .wrap.tile-wrap {
+  position:relative;
   background-color:#ffffff;
   max-width: calc((100% * (1/4)) - 3em);
   padding: 1em;
