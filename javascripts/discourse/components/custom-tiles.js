@@ -67,11 +67,13 @@ export default Component.extend({
       const img2 = (settings.tile_2_image!=='' && settings.tile_2_image!==null) ? settings.tile_2_image:assets.img_ask_the_community;
       const img3 = (settings.tile_3_image!=='' && settings.tile_3_image!==null) ? settings.tile_3_image:assets.img_announcements;
       const img4 = (settings.tile_4_image!=='' && settings.tile_4_image!==null) ? settings.tile_4_image:assets.img_show_and_tell;
+      const img5 = (settings.tile_5_image!=='' && settings.tile_5_image!==null) ? settings.tile_5_image:assets.img_product_road_map;
 
       jQuery('#tile-img-1 img.tile-img-thumb').attr('src',img1);
       jQuery('#tile-img-2 img.tile-img-thumb').attr('src',img2);
       jQuery('#tile-img-3 img.tile-img-thumb').attr('src',img3);
       jQuery('#tile-img-4 img.tile-img-thumb').attr('src',img4);
+      jQuery('#tile-img-5 img.tile-img-thumb').attr('src',img5);
     }
 
     this.set("enableBanner", settings.enable_banner_above_tiles);
@@ -93,15 +95,17 @@ export default Component.extend({
 
     if(vEnableTilesImages){
       //Uploads or Assets
-      const img1 = (settings.tile_1_image!=='' && settings.tile_1_image!==null)?settings.tile_1_image:assets.img_get_started;
-      const img2 = (settings.tile_2_image!=='' && settings.tile_2_image!==null)?settings.tile_2_image:assets.img_ask_the_community;
-      const img3 = (settings.tile_3_image!=='' && settings.tile_3_image!==null)?settings.tile_3_image:assets.img_announcements;
-      const img4 = (settings.tile_4_image!=='' && settings.tile_4_image!==null)?settings.tile_4_image:assets.img_show_and_tell;
+      const img1 = (settings.tile_1_image!=='' && settings.tile_1_image!==null) ? settings.tile_1_image:assets.img_get_started;
+      const img2 = (settings.tile_2_image!=='' && settings.tile_2_image!==null) ? settings.tile_2_image:assets.img_ask_the_community;
+      const img3 = (settings.tile_3_image!=='' && settings.tile_3_image!==null) ? settings.tile_3_image:assets.img_announcements;
+      const img4 = (settings.tile_4_image!=='' && settings.tile_4_image!==null) ? settings.tile_4_image:assets.img_show_and_tell;
+      const img5 = (settings.tile_5_image!=='' && settings.tile_5_image!==null) ? settings.tile_5_image:assets.img_product_road_map;
 
       jQuery('#tile-img-1 img.tile-img-thumb').attr('src',img1);
       jQuery('#tile-img-2 img.tile-img-thumb').attr('src',img2);
       jQuery('#tile-img-3 img.tile-img-thumb').attr('src',img3);
       jQuery('#tile-img-4 img.tile-img-thumb').attr('src',img4);
+      jQuery('#tile-img-5 img.tile-img-thumb').attr('src',img5);
     }
 
     if(vEnableBanner){

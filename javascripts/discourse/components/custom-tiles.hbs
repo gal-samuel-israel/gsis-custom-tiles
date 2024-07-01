@@ -60,6 +60,22 @@
         <div class="tile-headline">{{theme-i18n "tile_4.headline"}}</div>
         <div class="tile-subhead">{{theme-i18n "tile_4.subhead"}}</div>        
       </a>
-    </div>    
+    </div>
+    {{#if (theme-i18n "tile_5.headline")}}
+      <div class="wrap tile-wrap">
+        <a href={{theme-i18n 'tile_5.link'}} alt={{theme-i18n "tile_5.link_alt"}} title={{theme-i18n "tile_5.link_alt"}}>
+          {{#if enableTilesImages}}
+          <div id="tile-img-5" class="tile-img">
+            <img class="tile-img-thumb"/>
+            <div class="tile-link"><img src={{theme-setting 'theme_uploads.img_arrow_white'}} /></div>
+          </div>
+          {{else}}
+            <div class="tile-link"><img src={{theme-setting 'theme_uploads.img_arrow_white'}} /></div>
+          {{/if}}
+          <div class="tile-headline">{{theme-i18n "tile_5.headline"}}</div>
+          <div class="tile-subhead">{{theme-i18n "tile_5.subhead"}}</div>        
+        </a>
+      </div>
+    {{/if}}    
   </div>
 {{/if}}
