@@ -1,13 +1,13 @@
-{{#if shouldDisplay}}  
+{{#if this.shouldDisplay}}  
   <div class="custom-tiles-wrap">
-    {{#if enableBanner}}
+    {{#if this.enableBanner}}
       <div class="wrap tile-wrap banner-wrap">
         <a href={{theme-i18n 'banner_target.link'}} alt={{theme-i18n "banner_target.link_alt"}} title={{theme-i18n "banner_target.link_alt"}} target={{theme-i18n "banner_target.link_target"}}><img id="custom-tiles-banner" /></a>
       </div>
     {{/if}}
     <div class="wrap tile-wrap">
       <a href={{theme-i18n 'tile_1.link'}} alt={{theme-i18n "tile_1.link_alt"}} title={{theme-i18n "tile_1.link_alt"}}>
-        {{#if enableTilesImages}}
+        {{#if this.enableTilesImages}}
         <div id="tile-img-1" class="tile-img">
           <img class="tile-img-thumb"/>
           <div class="tile-link"><img src={{theme-setting 'theme_uploads.img_arrow_white'}} /></div>
@@ -21,7 +21,7 @@
     </div>    
     <div class="wrap tile-wrap">
       <a href={{theme-i18n 'tile_2.link'}} alt={{theme-i18n "tile_2.link_alt"}} title={{theme-i18n "tile_2.link_alt"}}>
-        {{#if enableTilesImages}}
+        {{#if this.enableTilesImages}}
         <div id="tile-img-2" class="tile-img">
           <img class="tile-img-thumb"/>
           <div class="tile-link"><img src={{theme-setting 'theme_uploads.img_arrow_white'}} /></div>
@@ -35,7 +35,7 @@
     </div>
     <div class="wrap tile-wrap">
       <a href={{theme-i18n 'tile_3.link'}} alt={{theme-i18n "tile_3.link_alt"}} title={{theme-i18n "tile_3.link_alt"}}>
-        {{#if enableTilesImages}}
+        {{#if this.enableTilesImages}}
         <div id="tile-img-3" class="tile-img">
           <img class="tile-img-thumb"/>
           <div class="tile-link"><img src={{theme-setting 'theme_uploads.img_arrow_white'}} /></div>
@@ -49,7 +49,7 @@
     </div>
     <div class="wrap tile-wrap">
       <a href={{theme-i18n 'tile_4.link'}} alt={{theme-i18n "tile_4.link_alt"}} title={{theme-i18n "tile_4.link_alt"}}>
-        {{#if enableTilesImages}}
+        {{#if this.enableTilesImages}}
         <div id="tile-img-4" class="tile-img">
           <img class="tile-img-thumb"/>
           <div class="tile-link"><img src={{theme-setting 'theme_uploads.img_arrow_white'}} /></div>
@@ -64,7 +64,7 @@
     {{#if (theme-i18n "tile_5.headline")}}
       <div class="wrap tile-wrap">
         <a href={{theme-i18n 'tile_5.link'}} alt={{theme-i18n "tile_5.link_alt"}} title={{theme-i18n "tile_5.link_alt"}}>
-          {{#if enableTilesImages}}
+          {{#if this.enableTilesImages}}
           <div id="tile-img-5" class="tile-img">
             <img class="tile-img-thumb"/>
             <div class="tile-link"><img src={{theme-setting 'theme_uploads.img_arrow_white'}} /></div>
