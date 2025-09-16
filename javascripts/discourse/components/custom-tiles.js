@@ -1,5 +1,5 @@
 import Component from "@ember/component";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 import { defaultHomepage } from "discourse/lib/utilities";
 import { and } from "@ember/object/computed";
 import { observes } from "@ember-decorators/object";
