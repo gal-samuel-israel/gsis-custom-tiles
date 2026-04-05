@@ -4,6 +4,7 @@ import { defaultHomepage } from "discourse/lib/utilities";
 import didInsert from "@ember/render-modifiers/modifiers/did-insert";
 import didUpdate from "@ember/render-modifiers/modifiers/did-update";
 import willDestroy from "@ember/render-modifiers/modifiers/will-destroy";
+import { i18n } from "discourse-i18n";
 
 const TILE_IMAGE_FALLBACKS = [
   "img_get_started",
@@ -91,6 +92,10 @@ export default class CustomTiles extends Component {
     return this.uploadOrFallback("banner_image", "img_show_and_tell");
   }
 
+  get arrowWhiteImage() {
+    return settings.theme_uploads?.img_arrow_white;
+  }
+
   get tile1Image() {
     return this.tileImage(1);
   }
@@ -109,6 +114,10 @@ export default class CustomTiles extends Component {
 
   get tile5Image() {
     return this.tileImage(5);
+  }
+
+  t(key) {
+    return i18n(themePrefix(key));
   }
 
   tileImage(index) {
@@ -150,10 +159,10 @@ export default class CustomTiles extends Component {
           {{#if this.enableBanner}}
             <div class="wrap tile-wrap banner-wrap">
               <a
-                href={{theme-i18n "banner_target.link"}}
-                alt={{theme-i18n "banner_target.link_alt"}}
-                title={{theme-i18n "banner_target.link_alt"}}
-                target={{theme-i18n "banner_target.link_target"}}
+                href={{this.t "banner_target.link"}}
+                alt={{this.t "banner_target.link_alt"}}
+                title={{this.t "banner_target.link_alt"}}
+                target={{this.t "banner_target.link_target"}}
               ><img
                   id="custom-tiles-banner"
                   src={{this.bannerImage}}
@@ -163,117 +172,97 @@ export default class CustomTiles extends Component {
 
           <div class="wrap tile-wrap">
             <a
-              href={{theme-i18n "tile_1.link"}}
-              alt={{theme-i18n "tile_1.link_alt"}}
-              title={{theme-i18n "tile_1.link_alt"}}
+              href={{this.t "tile_1.link"}}
+              alt={{this.t "tile_1.link_alt"}}
+              title={{this.t "tile_1.link_alt"}}
             >
               {{#if this.enableTilesImages}}
                 <div id="tile-img-1" class="tile-img">
                   <img class="tile-img-thumb" src={{this.tile1Image}} />
-                  <div class="tile-link"><img
-                      src={{theme-setting "theme_uploads.img_arrow_white"}}
-                    /></div>
+                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
                 </div>
               {{else}}
-                <div class="tile-link"><img
-                    src={{theme-setting "theme_uploads.img_arrow_white"}}
-                  /></div>
+                <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
               {{/if}}
-              <div class="tile-headline">{{theme-i18n "tile_1.headline"}}</div>
-              <div class="tile-subhead">{{theme-i18n "tile_1.subhead"}}</div>
+              <div class="tile-headline">{{this.t "tile_1.headline"}}</div>
+              <div class="tile-subhead">{{this.t "tile_1.subhead"}}</div>
             </a>
           </div>
 
           <div class="wrap tile-wrap">
             <a
-              href={{theme-i18n "tile_2.link"}}
-              alt={{theme-i18n "tile_2.link_alt"}}
-              title={{theme-i18n "tile_2.link_alt"}}
+              href={{this.t "tile_2.link"}}
+              alt={{this.t "tile_2.link_alt"}}
+              title={{this.t "tile_2.link_alt"}}
             >
               {{#if this.enableTilesImages}}
                 <div id="tile-img-2" class="tile-img">
                   <img class="tile-img-thumb" src={{this.tile2Image}} />
-                  <div class="tile-link"><img
-                      src={{theme-setting "theme_uploads.img_arrow_white"}}
-                    /></div>
+                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
                 </div>
               {{else}}
-                <div class="tile-link"><img
-                    src={{theme-setting "theme_uploads.img_arrow_white"}}
-                  /></div>
+                <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
               {{/if}}
-              <div class="tile-headline">{{theme-i18n "tile_2.headline"}}</div>
-              <div class="tile-subhead">{{theme-i18n "tile_2.subhead"}}</div>
+              <div class="tile-headline">{{this.t "tile_2.headline"}}</div>
+              <div class="tile-subhead">{{this.t "tile_2.subhead"}}</div>
             </a>
           </div>
 
           <div class="wrap tile-wrap">
             <a
-              href={{theme-i18n "tile_3.link"}}
-              alt={{theme-i18n "tile_3.link_alt"}}
-              title={{theme-i18n "tile_3.link_alt"}}
+              href={{this.t "tile_3.link"}}
+              alt={{this.t "tile_3.link_alt"}}
+              title={{this.t "tile_3.link_alt"}}
             >
               {{#if this.enableTilesImages}}
                 <div id="tile-img-3" class="tile-img">
                   <img class="tile-img-thumb" src={{this.tile3Image}} />
-                  <div class="tile-link"><img
-                      src={{theme-setting "theme_uploads.img_arrow_white"}}
-                    /></div>
+                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
                 </div>
               {{else}}
-                <div class="tile-link"><img
-                    src={{theme-setting "theme_uploads.img_arrow_white"}}
-                  /></div>
+                <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
               {{/if}}
-              <div class="tile-headline">{{theme-i18n "tile_3.headline"}}</div>
-              <div class="tile-subhead">{{theme-i18n "tile_3.subhead"}}</div>
+              <div class="tile-headline">{{this.t "tile_3.headline"}}</div>
+              <div class="tile-subhead">{{this.t "tile_3.subhead"}}</div>
             </a>
           </div>
 
           <div class="wrap tile-wrap">
             <a
-              href={{theme-i18n "tile_4.link"}}
-              alt={{theme-i18n "tile_4.link_alt"}}
-              title={{theme-i18n "tile_4.link_alt"}}
+              href={{this.t "tile_4.link"}}
+              alt={{this.t "tile_4.link_alt"}}
+              title={{this.t "tile_4.link_alt"}}
             >
               {{#if this.enableTilesImages}}
                 <div id="tile-img-4" class="tile-img">
                   <img class="tile-img-thumb" src={{this.tile4Image}} />
-                  <div class="tile-link"><img
-                      src={{theme-setting "theme_uploads.img_arrow_white"}}
-                    /></div>
+                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
                 </div>
               {{else}}
-                <div class="tile-link"><img
-                    src={{theme-setting "theme_uploads.img_arrow_white"}}
-                  /></div>
+                <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
               {{/if}}
-              <div class="tile-headline">{{theme-i18n "tile_4.headline"}}</div>
-              <div class="tile-subhead">{{theme-i18n "tile_4.subhead"}}</div>
+              <div class="tile-headline">{{this.t "tile_4.headline"}}</div>
+              <div class="tile-subhead">{{this.t "tile_4.subhead"}}</div>
             </a>
           </div>
 
-          {{#if (theme-i18n "tile_5.headline")}}
+          {{#if (this.t "tile_5.headline")}}
             <div class="wrap tile-wrap">
               <a
-                href={{theme-i18n "tile_5.link"}}
-                alt={{theme-i18n "tile_5.link_alt"}}
-                title={{theme-i18n "tile_5.link_alt"}}
+                href={{this.t "tile_5.link"}}
+                alt={{this.t "tile_5.link_alt"}}
+                title={{this.t "tile_5.link_alt"}}
               >
                 {{#if this.enableTilesImages}}
                   <div id="tile-img-5" class="tile-img">
                     <img class="tile-img-thumb" src={{this.tile5Image}} />
-                    <div class="tile-link"><img
-                        src={{theme-setting "theme_uploads.img_arrow_white"}}
-                      /></div>
+                    <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
                   </div>
                 {{else}}
-                  <div class="tile-link"><img
-                      src={{theme-setting "theme_uploads.img_arrow_white"}}
-                    /></div>
+                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
                 {{/if}}
-                <div class="tile-headline">{{theme-i18n "tile_5.headline"}}</div>
-                <div class="tile-subhead">{{theme-i18n "tile_5.subhead"}}</div>
+                <div class="tile-headline">{{this.t "tile_5.headline"}}</div>
+                <div class="tile-subhead">{{this.t "tile_5.subhead"}}</div>
               </a>
             </div>
           {{/if}}
