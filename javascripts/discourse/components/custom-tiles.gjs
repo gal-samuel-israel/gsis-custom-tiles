@@ -1,4 +1,5 @@
 import Component from "@glimmer/component";
+import { action } from "@ember/object";
 import { service } from "@ember/service";
 import { defaultHomepage } from "discourse/lib/utilities";
 import didInsert from "@ember/render-modifiers/modifiers/did-insert";
@@ -137,6 +138,7 @@ export default class CustomTiles extends Component {
     return settings.theme_uploads?.[fallbackAssetName];
   }
 
+  @action
   syncDisplayClass() {
     document.documentElement.classList.toggle(
       "display-custom-tiles-bk",
@@ -144,6 +146,7 @@ export default class CustomTiles extends Component {
     );
   }
 
+  @action
   cleanupDisplayClass() {
     document.documentElement.classList.remove("display-custom-tiles-bk");
   }
