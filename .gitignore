@@ -1,4 +1,6 @@
 node_modules
+.codex
+.history
 .discourse-site
 .vscode
 .git

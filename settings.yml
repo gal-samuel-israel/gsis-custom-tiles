@@ -12,6 +12,10 @@ enable_debug_for_all:
   type: bool
   default: false
   description: ""
+use_gjs:
+  type: bool
+  default: true
+  description: "Use the modern GJS component implementation"
 show_on:
   default: homepage
   type: enum
