@@ -1,6 +1,5 @@
 import { apiInitializer } from "discourse/lib/api";
 import customTilesComponent from "../components/custom-tiles";
-import customTilesLegacyComponent from "../components/custom-tiles-legacy";
 export default apiInitializer("1.6", (api) => {
   if (api.getCurrentUser()) {
     const currentUser = api.getCurrentUser();
@@ -28,9 +27,5 @@ export default apiInitializer("1.6", (api) => {
     settingsOutlet === "above-main-container"
       ? "above-main-container"
       : "below-site-header";
-  const selectedComponent = settings.use_gjs
-    ? customTilesComponent
-    : customTilesLegacyComponent;
-
-  api.renderInOutlet(selectedOutlet, selectedComponent);
+  api.renderInOutlet(selectedOutlet, customTilesComponent);
 });
