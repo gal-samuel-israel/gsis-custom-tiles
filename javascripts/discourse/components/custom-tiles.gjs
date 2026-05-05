@@ -5,6 +5,7 @@ import { defaultHomepage } from "discourse/lib/utilities";
 import didInsert from "@ember/render-modifiers/modifiers/did-insert";
 import didUpdate from "@ember/render-modifiers/modifiers/did-update";
 import willDestroy from "@ember/render-modifiers/modifiers/will-destroy";
+import { htmlSafe } from "@ember/template";
 import { i18n } from "discourse-i18n";
 
 const TILE_IMAGE_FALLBACKS = [
@@ -86,11 +87,27 @@ export default class CustomTiles extends Component {
   }
 
   get enableBanner() {
-    return settings.enable_banner_above_tiles;
+    return settings.banner_enabled;
+  }
+
+  get bannerPosition() {
+    return settings.banner_position === "above" ? "above" : "below";
+  }
+
+  get bannerClasses() {
+    return `wrap tile-wrap banner-wrap banner-wrap--${this.bannerPosition}`;
+  }
+
+  get bannerStyle() {
+    return htmlSafe(
+      `margin-top: ${this.pixelSetting(
+        "banner_margin_top"
+      )}px; margin-bottom: ${this.pixelSetting("banner_margin_bottom")}px;`
+    );
   }
 
   get bannerImage() {
-    return this.uploadOrFallback("banner_image", "img_show_and_tell");
+    return this.uploadOrFallback("banner_image", "img_banner");
   }
 
   get arrowWhiteImage() {
@@ -138,6 +155,16 @@ export default class CustomTiles extends Component {
     return settings.theme_uploads?.[fallbackAssetName];
   }
 
+  pixelSetting(settingName) {
+    const value = Number(settings[settingName]);
+
+    if (Number.isFinite(value) && value >= 0) {
+      return Math.round(value);
+    }
+
+    return 0;
+  }
+
   @action
   syncDisplayClass() {
     document.documentElement.classList.toggle(
@@ -159,114 +186,116 @@ export default class CustomTiles extends Component {
     >
       {{#if this.shouldDisplay}}
         <div class="custom-tiles-wrap">
-          {{#if this.enableBanner}}
-            <div class="wrap tile-wrap banner-wrap">
-              <a
-                href={{this.t "banner_target.link"}}
-                alt={{this.t "banner_target.link_alt"}}
-                title={{this.t "banner_target.link_alt"}}
-                target={{this.t "banner_target.link_target"}}
-              ><img
-                  id="custom-tiles-banner"
-                  src={{this.bannerImage}}
-                /></a>
-            </div>
-          {{/if}}
-
-          <div class="wrap tile-wrap">
-            <a
-              href={{this.t "tile_1.link"}}
-              alt={{this.t "tile_1.link_alt"}}
-              title={{this.t "tile_1.link_alt"}}
-            >
-              {{#if this.enableTilesImages}}
-                <div id="tile-img-1" class="tile-img">
-                  <img class="tile-img-thumb" src={{this.tile1Image}} />
-                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
-                </div>
-              {{else}}
-                <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
-              {{/if}}
-              <div class="tile-headline">{{this.t "tile_1.headline"}}</div>
-              <div class="tile-subhead">{{this.t "tile_1.subhead"}}</div>
-            </a>
-          </div>
-
-          <div class="wrap tile-wrap">
-            <a
-              href={{this.t "tile_2.link"}}
-              alt={{this.t "tile_2.link_alt"}}
-              title={{this.t "tile_2.link_alt"}}
-            >
-              {{#if this.enableTilesImages}}
-                <div id="tile-img-2" class="tile-img">
-                  <img class="tile-img-thumb" src={{this.tile2Image}} />
-                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
-                </div>
-              {{else}}
-                <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
-              {{/if}}
-              <div class="tile-headline">{{this.t "tile_2.headline"}}</div>
-              <div class="tile-subhead">{{this.t "tile_2.subhead"}}</div>
-            </a>
-          </div>
-
-          <div class="wrap tile-wrap">
-            <a
-              href={{this.t "tile_3.link"}}
-              alt={{this.t "tile_3.link_alt"}}
-              title={{this.t "tile_3.link_alt"}}
-            >
-              {{#if this.enableTilesImages}}
-                <div id="tile-img-3" class="tile-img">
-                  <img class="tile-img-thumb" src={{this.tile3Image}} />
-                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
-                </div>
-              {{else}}
-                <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
-              {{/if}}
-              <div class="tile-headline">{{this.t "tile_3.headline"}}</div>
-              <div class="tile-subhead">{{this.t "tile_3.subhead"}}</div>
-            </a>
-          </div>
-
-          <div class="wrap tile-wrap">
-            <a
-              href={{this.t "tile_4.link"}}
-              alt={{this.t "tile_4.link_alt"}}
-              title={{this.t "tile_4.link_alt"}}
-            >
-              {{#if this.enableTilesImages}}
-                <div id="tile-img-4" class="tile-img">
-                  <img class="tile-img-thumb" src={{this.tile4Image}} />
-                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
-                </div>
-              {{else}}
-                <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
-              {{/if}}
-              <div class="tile-headline">{{this.t "tile_4.headline"}}</div>
-              <div class="tile-subhead">{{this.t "tile_4.subhead"}}</div>
-            </a>
-          </div>
-
-          {{#if (this.t "tile_5.headline")}}
+          <div class="custom-tiles-panel-grid">
             <div class="wrap tile-wrap">
               <a
-                href={{this.t "tile_5.link"}}
-                alt={{this.t "tile_5.link_alt"}}
-                title={{this.t "tile_5.link_alt"}}
+                href={{this.t "tile_1.link"}}
+                alt={{this.t "tile_1.link_alt"}}
+                title={{this.t "tile_1.link_alt"}}
               >
                 {{#if this.enableTilesImages}}
-                  <div id="tile-img-5" class="tile-img">
-                    <img class="tile-img-thumb" src={{this.tile5Image}} />
+                  <div id="tile-img-1" class="tile-img">
+                    <img class="tile-img-thumb" src={{this.tile1Image}} />
                     <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
                   </div>
                 {{else}}
                   <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
                 {{/if}}
-                <div class="tile-headline">{{this.t "tile_5.headline"}}</div>
-                <div class="tile-subhead">{{this.t "tile_5.subhead"}}</div>
+                <div class="tile-headline">{{this.t "tile_1.headline"}}</div>
+                <div class="tile-subhead">{{this.t "tile_1.subhead"}}</div>
               </a>
+            </div>
+
+            <div class="wrap tile-wrap">
+              <a
+                href={{this.t "tile_2.link"}}
+                alt={{this.t "tile_2.link_alt"}}
+                title={{this.t "tile_2.link_alt"}}
+              >
+                {{#if this.enableTilesImages}}
+                  <div id="tile-img-2" class="tile-img">
+                    <img class="tile-img-thumb" src={{this.tile2Image}} />
+                    <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
+                  </div>
+                {{else}}
+                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
+                {{/if}}
+                <div class="tile-headline">{{this.t "tile_2.headline"}}</div>
+                <div class="tile-subhead">{{this.t "tile_2.subhead"}}</div>
+              </a>
+            </div>
+
+            <div class="wrap tile-wrap">
+              <a
+                href={{this.t "tile_3.link"}}
+                alt={{this.t "tile_3.link_alt"}}
+                title={{this.t "tile_3.link_alt"}}
+              >
+                {{#if this.enableTilesImages}}
+                  <div id="tile-img-3" class="tile-img">
+                    <img class="tile-img-thumb" src={{this.tile3Image}} />
+                    <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
+                  </div>
+                {{else}}
+                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
+                {{/if}}
+                <div class="tile-headline">{{this.t "tile_3.headline"}}</div>
+                <div class="tile-subhead">{{this.t "tile_3.subhead"}}</div>
+              </a>
+            </div>
+
+            <div class="wrap tile-wrap">
+              <a
+                href={{this.t "tile_4.link"}}
+                alt={{this.t "tile_4.link_alt"}}
+                title={{this.t "tile_4.link_alt"}}
+              >
+                {{#if this.enableTilesImages}}
+                  <div id="tile-img-4" class="tile-img">
+                    <img class="tile-img-thumb" src={{this.tile4Image}} />
+                    <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
+                  </div>
+                {{else}}
+                  <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
+                {{/if}}
+                <div class="tile-headline">{{this.t "tile_4.headline"}}</div>
+                <div class="tile-subhead">{{this.t "tile_4.subhead"}}</div>
+              </a>
+            </div>
+
+            {{#if (this.t "tile_5.headline")}}
+              <div class="wrap tile-wrap">
+                <a
+                  href={{this.t "tile_5.link"}}
+                  alt={{this.t "tile_5.link_alt"}}
+                  title={{this.t "tile_5.link_alt"}}
+                >
+                  {{#if this.enableTilesImages}}
+                    <div id="tile-img-5" class="tile-img">
+                      <img class="tile-img-thumb" src={{this.tile5Image}} />
+                      <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
+                    </div>
+                  {{else}}
+                    <div class="tile-link"><img src={{this.arrowWhiteImage}} /></div>
+                  {{/if}}
+                  <div class="tile-headline">{{this.t "tile_5.headline"}}</div>
+                  <div class="tile-subhead">{{this.t "tile_5.subhead"}}</div>
+                </a>
+              </div>
+            {{/if}}
+          </div>
+
+          {{#if this.enableBanner}}
+            <div class={{this.bannerClasses}} style={{this.bannerStyle}}>
+              <a
+                href={{this.t "banner_target.link"}}
+                title={{this.t "banner_target.link_alt"}}
+                target={{this.t "banner_target.link_target"}}
+              ><img
+                  id="custom-tiles-banner"
+                  src={{this.bannerImage}}
+                  alt={{this.t "banner_target.link_alt"}}
+                /></a>
             </div>
           {{/if}}
         </div>
