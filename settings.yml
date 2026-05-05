@@ -37,6 +37,24 @@ banner_image:
   default: ""
   description: "Image for the banner"
 
+banner_target_link:
+  type: string
+  default: "#"
+  description: "URL for the banner link"
+
+banner_target_link_alt:
+  type: string
+  default: ""
+  description: "Title and alt text for the banner link"
+
+banner_target_link_target:
+  default: "_blank"
+  type: enum
+  choices:
+    - "_self"
+    - "_blank"
+  description: "Where to open the banner link"
+
 banner_position:
   default: below
   type: enum

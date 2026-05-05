@@ -24,7 +24,3 @@ en:
     subhead: "Share your feedback and/or requests"
     link: "/c/product-roadmap-design"
     link_alt: "click to explore Product Roadmap & Design"
-  banner_target:
-    link: "#"
-    link_alt: ""
-    link_target: "_blank"

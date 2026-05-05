@@ -9,6 +9,7 @@ This component is Based on : [discourse-search-banner](https://github.com/discou
 - Set the headline and subhead text, link and alt for the link
 - Show the tiles on all top-level topic pages, or just the homepage (default)
 - Show an optional banner above or below the tiles
+- Set the banner image, target URL, title/alt text, and link target together
 - Adjust the banner margin above and below in pixels
 
 ### Custom styling

@@ -110,6 +110,18 @@ export default class CustomTiles extends Component {
     return this.uploadOrFallback("banner_image", "img_banner");
   }
 
+  get bannerTargetLink() {
+    return settings.banner_target_link || "#";
+  }
+
+  get bannerTargetAlt() {
+    return settings.banner_target_link_alt || "";
+  }
+
+  get bannerTargetTarget() {
+    return settings.banner_target_link_target || "_blank";
+  }
+
   get arrowWhiteImage() {
     return settings.theme_uploads?.img_arrow_white;
   }
@@ -288,13 +300,13 @@ export default class CustomTiles extends Component {
           {{#if this.enableBanner}}
             <div class={{this.bannerClasses}} style={{this.bannerStyle}}>
               <a
-                href={{this.t "banner_target.link"}}
-                title={{this.t "banner_target.link_alt"}}
-                target={{this.t "banner_target.link_target"}}
+                href={{this.bannerTargetLink}}
+                title={{this.bannerTargetAlt}}
+                target={{this.bannerTargetTarget}}
               ><img
                   id="custom-tiles-banner"
                   src={{this.bannerImage}}
-                  alt={{this.t "banner_target.link_alt"}}
+                  alt={{this.bannerTargetAlt}}
                 /></a>
             </div>
           {{/if}}
